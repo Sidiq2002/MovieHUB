@@ -21,7 +21,7 @@ export const Register = () => {
       <div className="container d-flex justify-content-center align-items-center">
         <div className="login-form">
           <form
-            className="py-4 px-5 forms-mv"
+            className="py-4 px-2 forms-mv"
             onSubmit={handleSubmit}
           >
             <h4 className="text-center border-bottom border-dark">Register</h4>
