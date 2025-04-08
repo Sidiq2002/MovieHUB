@@ -1,0 +1,16 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+@media screen and (max-width: 767px) {
+    .button-logout {
+      margin: 10px 0px;
+    }
+  }
+  
+  .button-logout {
+    margin-left: 2px;
+  }

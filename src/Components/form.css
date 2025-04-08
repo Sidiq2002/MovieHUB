@@ -1,0 +1,16 @@
+.login-form {
+  background: url(../assets/fr-bg.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 100px;
+}
+.forms-mv{
+    background: rgba(235, 136, 7, 0.911);
+    border-radius: 10px;
+}
+body{
+    padding: 0px ;
+}
