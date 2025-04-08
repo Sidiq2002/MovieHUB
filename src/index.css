@@ -40,6 +40,9 @@ body {
   margin-top: 100px;
   height: 100vh;
 }
+.detail{
+  margin-top: 100px;
+}
 .search{
   margin-top: 80px;
 }

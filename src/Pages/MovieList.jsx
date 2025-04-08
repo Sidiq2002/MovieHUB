@@ -12,7 +12,7 @@ export const MovieList = ({ title, apiPath }) => {
   return (
     <div>
       <Header />
-      <div className="container-fluid details">
+      <div className="container-fluid detail">
         <main className="container">
           {title == "MoviesHUB" ? (
             <div>
