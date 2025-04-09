@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Components/form.css"
+import "../Components/form.css";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -9,21 +9,23 @@ export const Register = () => {
     email: "",
     password: "",
   });
-  // LocalStorage
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (input.name === "" || input.email === "" || input.password === "") {
+      alert("Please enter name, email, and password");
+      return;
+    }
     localStorage.setItem("user", JSON.stringify(input));
     navigate("/login");
   };
+
   return (
     <div className="login-form">
       <h1 className="text-center">MovieHUB</h1>
       <div className="container d-flex justify-content-center align-items-center">
         <div className="login-form">
-          <form
-            className="py-4 px-3 forms-mv"
-            onSubmit={handleSubmit}
-          >
+          <form className="py-4 px-3 forms-mv" onSubmit={handleSubmit}>
             <h4 className="text-center border-bottom border-dark">Register</h4>
             <div className="mb-3">
               <label className="form-label">Name</label>
@@ -34,7 +36,6 @@ export const Register = () => {
                 onChange={(e) => setInput({ ...input, name: e.target.value })}
                 className="form-control"
                 placeholder="Enter your name"
-                required
               />
             </div>
             <div className="mb-3">
@@ -46,7 +47,6 @@ export const Register = () => {
                 onChange={(e) => setInput({ ...input, email: e.target.value })}
                 className="form-control"
                 placeholder="Enter your email"
-                required
               />
             </div>
             <div className="mb-3">
@@ -54,12 +54,12 @@ export const Register = () => {
               <input
                 type="password"
                 name="password"
+                placeholder="Enter your password"
                 value={input.password}
                 onChange={(e) =>
                   setInput({ ...input, password: e.target.value })
                 }
                 className="form-control"
-                required
               />
             </div>
             <button

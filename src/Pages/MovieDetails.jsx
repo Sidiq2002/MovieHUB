@@ -31,7 +31,7 @@ export const MovieDetails = () => {
   return (
     <div>
          <Header />
-      <div className="container-fluid details">
+      <div className="container-fluid detail">
         <main className="container mt-2">
           <div className="row">
             <div className="col-md-4">

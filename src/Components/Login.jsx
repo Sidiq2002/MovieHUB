@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Components/form.css"
+import "../Components/form.css";
 export const Login = () => {
-  const navigator = useNavigate()
-   const [input, setInput] = useState({
-      email: "",
-      password: "",
-    });
-    const handleLogin = (e) =>{
-      e.preventDefault()
-      const loginUser = JSON.parse(localStorage.getItem("user"))
-      if(input.email == loginUser.email && input.password == loginUser.password){
-        localStorage.setItem("loggedin",true)
-        navigator("/home")
-      } else {
-        alert("Wrong Email or Password")
-      }
+  const navigator = useNavigate();
+  const [input, setInput] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (input.email === "" || input.password === "") {
+      alert("Please enter both email and password");
+      return;
     }
+    const loginUser = JSON.parse(localStorage.getItem("user"));
+    if (
+      input.email === loginUser.email &&
+      input.password === loginUser.password
+    ) {
+      localStorage.setItem("loggedin", true);
+      navigator("/home");
+    } else {
+      alert("Wrong Email or Password");
+    }
+  };
   return (
     <div className="login-form">
       <h1 className="text-center">MovieHUB</h1>
@@ -34,7 +42,6 @@ export const Login = () => {
               onChange={(e) => setInput({ ...input, email: e.target.value })}
               className="form-control"
               placeholder="Enter your email"
-              required
             />
           </div>
           <div className="mb-3">
@@ -42,10 +49,10 @@ export const Login = () => {
             <input
               type="password"
               name="password"
+              placeholder="Enter your password"
               value={input.password}
               onChange={(e) => setInput({ ...input, password: e.target.value })}
               className="form-control"
-              required
             />
           </div>
           <button
