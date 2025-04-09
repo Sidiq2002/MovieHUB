@@ -12,7 +12,7 @@ export const Header = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("logged");
+    localStorage.removeItem("loggin");
     navigate("/login");
   };
 

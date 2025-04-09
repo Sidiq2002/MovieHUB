@@ -19,7 +19,7 @@ export const Login = () => {
       input.email === loginUser.email &&
       input.password === loginUser.password
     ) {
-      localStorage.setItem("logged", true);
+      localStorage.setItem("loggin", true);
       navigator("/home");
     } else {
       alert("Wrong Email or Password");
