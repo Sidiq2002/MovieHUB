@@ -50,7 +50,7 @@ export const Login = () => {
           </div>
           <button
             type="submit"
-            className=" w-100 btn btn-outline-success fw-bold "
+            className=" w-100 btn btn-outline-light fw-bold "
           >
             Submit
           </button>
@@ -58,7 +58,7 @@ export const Login = () => {
             Create a new account?
             <Link
               to="/register"
-              className="ps-1 link-danger text-secondary text-decoration-none"
+              className="ps-1 link-danger text-light text-decoration-none"
             >
               Register
             </Link>

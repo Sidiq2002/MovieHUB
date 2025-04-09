@@ -3,7 +3,7 @@ import { MovieList, MovieDetails, Search, PageNotFound } from "../Pages";
 import { Login } from "../Components/Login";
 import { Register } from "../Components/Register";
 import { ScrooltoTop } from "../Components/ScrooltoTop";
-import { ProductedRoutes } from "./ProductedRoutes";
+import { ProtectedRoutes } from "./ProductedRoutes";
 
 export const AllRoutes = () => {
   return (
@@ -12,7 +12,7 @@ export const AllRoutes = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<ProductedRoutes />}>
+        <Route path="/" element={<ProtectedRoutes />}>
           <Route
             path="home"
             element={
@@ -45,4 +45,3 @@ export const AllRoutes = () => {
     </BrowserRouter>
   );
 };
-

@@ -21,7 +21,7 @@ export const Register = () => {
       <div className="container d-flex justify-content-center align-items-center">
         <div className="login-form">
           <form
-            className="py-4 px-2 forms-mv"
+            className="py-4 px-3 forms-mv"
             onSubmit={handleSubmit}
           >
             <h4 className="text-center border-bottom border-dark">Register</h4>
@@ -64,7 +64,7 @@ export const Register = () => {
             </div>
             <button
               type="submit"
-              className=" w-100 btn btn-outline-success fw-bold "
+              className=" w-100 btn btn-outline-light fw-bold "
             >
               Submit
             </button>
@@ -72,7 +72,7 @@ export const Register = () => {
               Create a new account?
               <Link
                 to="/login"
-                className="ps-1 link-danger text-secondary text-decoration-none"
+                className="ps-1 link-danger text-light text-decoration-none"
               >
                 Login
               </Link>
