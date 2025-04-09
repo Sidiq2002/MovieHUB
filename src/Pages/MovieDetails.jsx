@@ -54,7 +54,7 @@ export const MovieDetails = () => {
               <p className="mt-2">
                 <i className="bi bi-star-fill text-warning"></i>{" "}
                 {movie.vote_average} |{" "}
-                <i className="bi bi-person-fill text-success"></i>{" "}
+                <i className="bi bi-person-fill text-dark"></i>{" "}
                 {movie.vote_count} reviews
               </p>
               <table className="table table-bordered w-50 mt-2 ">

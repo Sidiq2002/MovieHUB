@@ -6,7 +6,7 @@ export const PageNotFound = () => {
         <img src={Pagenot} className="pagenot_image" />
       </div>
       <div>
-        <a href="home" className="btn btn-success mt-3">
+        <a href="home" className="btn btn-dark mt-3">
           Goto Home Page
         </a>
       </div>

@@ -25,7 +25,7 @@ export const MovieList = ({ title, apiPath }) => {
                   guid to find great films.
                 </p>
                 <button
-                  className="btn btn-success"
+                  className="btn btn-dark"
                   onClick={() => {
                     navigation("/movies/upcoming");
                   }}

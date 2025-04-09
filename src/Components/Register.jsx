@@ -68,7 +68,7 @@ export const Register = () => {
             >
               Submit
             </button>
-            <div className="form-text mt-2 fw-bold">
+            <div className="form-text text-warning mt-2 fw-bold">
               Create a new account?
               <Link
                 to="/login"

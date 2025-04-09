@@ -9,10 +9,10 @@ export const Card = ({movie}) => {
       <div className="card shadow-sm" title={title}>
         <img src={image} alt="" className="img-fluid"/>
         <div className="card-body">
-          <h5 className="card-title text-success text-overflow-1">{title}</h5>
+          <h5 className="card-title text-dark text-overflow-1">{title}</h5>
           <p className="card-text text-overflow-2">{overview}</p>
           <div className="d-flex justify-content-between align-items-center">
-            <Link to={`/movie/${id}`} className=" btn btn-outline-success">
+            <Link to={`/movie/${id}`} className=" btn btn-outline-dark">
               Read More
             </Link>
             <small>

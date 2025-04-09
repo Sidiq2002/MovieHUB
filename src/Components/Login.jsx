@@ -19,7 +19,7 @@ export const Login = () => {
       input.email === loginUser.email &&
       input.password === loginUser.password
     ) {
-      localStorage.setItem("loggedin", true);
+      localStorage.setItem("logged", true);
       navigator("/home");
     } else {
       alert("Wrong Email or Password");
@@ -61,7 +61,7 @@ export const Login = () => {
           >
             Submit
           </button>
-          <div className="form-text mt-2 fw-bold">
+          <div className="form-text text-warning mt-2 fw-bold">
             Create a new account?
             <Link
               to="/register"

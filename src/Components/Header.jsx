@@ -1,19 +1,30 @@
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 export const Header = () => {
-  const navigator = useNavigate();
   const navigate = useNavigate();
+  const [isActive, setIsActive] = useState(false);
+
   const handleSearch = (e) => {
     e.preventDefault();
     const queryTerm = e.target.Search.value;
     e.target.reset();
-    return navigator(`/search?q=${queryTerm}`);
+    navigate(`/search?q=${queryTerm}`);
   };
+
   const handleLogout = () => {
     localStorage.removeItem("loggedin");
     navigate("/login");
   };
+
+  const closeMenu = () => {
+    setIsActive(false);
+  };
+
+  const mobileMenu = () => {
+    setIsActive(!isActive);
+  };
   return (
-    <nav className="navbar navbar-expand-md fixed-top bg-success navbar-dark">
+    <nav className="navbar navbar-expand-md fixed-top bg-dark navbar-dark">
       <div className="container-fluid">
         <h4>
           <a className="navbar-brand">
@@ -26,28 +37,44 @@ export const Header = () => {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#menu"
+          onClick={mobileMenu}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="menu">
+        <div
+          className={`collapse navbar-collapse ${isActive ? "show" : ""}`}
+          id="menu"
+        >
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <NavLink to="/home" className="nav-link">
+              <NavLink to="/home" className="nav-link" onClick={closeMenu}>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/movies/top" className="nav-link">
+              <NavLink
+                to="/movies/top"
+                className="nav-link"
+                onClick={closeMenu}
+              >
                 Top Rate
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/movies/popular" className="nav-link">
+              <NavLink
+                to="/movies/popular"
+                className="nav-link"
+                onClick={closeMenu}
+              >
                 Popular
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/movies/upcoming" className="nav-link">
+              <NavLink
+                to="/movies/upcoming"
+                className="nav-link"
+                onClick={closeMenu}
+              >
                 Upcoming
               </NavLink>
             </li>
@@ -64,7 +91,7 @@ export const Header = () => {
           <button
             type="submit"
             onClick={handleLogout}
-            className="btn btn-sm btn-outline-info button-logout"
+            className="btn btn-sm btn-outline-info button-logout ms-lg-3"
           >
             Logout
           </button>
