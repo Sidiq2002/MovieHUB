@@ -10,15 +10,21 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (input.email === "" || input.password === "") {
       alert("Please enter both email and password");
       return;
     }
+    if (!emailRegex.test(input.email)) {
+      alert("Invalid email format");
+      return;
+    }
     const loginUser = JSON.parse(localStorage.getItem("user"));
-    if (
-      input.email === loginUser.email &&
-      input.password === loginUser.password
-    ) {
+    if (!loginUser) {
+      alert("User not found");
+      return;
+    }
+    if (input.email === loginUser.email && input.password === loginUser.password) {
       localStorage.setItem("loggin", true);
       navigator("/home");
     } else {

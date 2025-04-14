@@ -12,13 +12,20 @@ export const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (input.name === "" || input.email === "" || input.password === "") {
       alert("Please enter name, email, and password");
+      return;
+    }
+    if (!emailRegex.test(input.email)) {
+      alert("Invalid email format");
       return;
     }
     localStorage.setItem("user", JSON.stringify(input));
     navigate("/login");
   };
+  
+  
 
   return (
     <div className="login-form">
